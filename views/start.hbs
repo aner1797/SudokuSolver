@@ -1,0 +1,23 @@
+{{#if error}}
+  <h1 id="incorrect">INCORRECT SUDOKU!</h1>
+{{/if}}
+{{#if correct}}
+  <h1 id="correct">CORRECT SUDOKU!</h1>
+{{/if}}
+
+<form action="/solve" method="post">
+    <table>
+    {{#each grid}}
+          <tr>
+      {{#each this}}
+            <td><input type="number" name=c{{@../index}}{{@index}} value={{this}}></td>
+      {{/each}}
+          </tr>
+    {{/each}}
+      
+    </table>
+    <input id="submitBtn" type="submit" value="CORRECT">
+</form>
+
+<a href="/reset"><button id="submitBtn" >RESET</button></a>
+
